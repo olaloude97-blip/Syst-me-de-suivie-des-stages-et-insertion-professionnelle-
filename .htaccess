@@ -1,0 +1,3 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^(config|database|storage)(/|$) - [F,L,NC]
