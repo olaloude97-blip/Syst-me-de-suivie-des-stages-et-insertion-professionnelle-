@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <title>Aperçu · MemoThèque</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .preview-banner{padding:10px 7.2%;background:#e5ebd9;color:#45603e;font-size:10px;letter-spacing:.4px;text-align:center}
+    .preview-banner strong{letter-spacing:1px}
+    .preview-empty{display:none}
+    .preview-card[hidden]{display:none}
+    .preview-card{cursor:pointer}
+    @media(max-width:600px){.preview-banner{padding:10px 5%;font-size:9px}}
+  </style>
+</head>
+<body>
+  <div class="preview-banner"><strong>APERÇU INTERACTIF</strong> · Catalogue de démonstration — les comptes et les téléchargements ne sont pas connectés à une base de données.</div>
+  <header class="topbar">
+    <a class="brand" href="preview.html"><span class="brand-mark">M</span><span>Memo<span class="brand-light">Thèque</span><small>LA BIBLIOTHÈQUE DES IDÉES</small></span></a>
+    <nav><a href="#catalogue">Explorer</a><a href="#comment-ca-marche">À propos</a><a href="#catalogue">Connexion</a><a class="nav-cta" href="#catalogue">Créer un compte <span>↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><i class="dot"></i> LE SAVOIR EN PARTAGE</span>
+        <h1>Chaque mémoire<br>ouvre <em>une porte.</em></h1>
+        <p>Explorez les travaux de recherche de notre communauté universitaire. Trouvez l’inspiration pour votre prochaine idée.</p>
+        <div class="hero-stats"><div><strong>01.</strong><span>Explorer<br>les recherches</span></div><div><strong>02.</strong><span>Trouver votre<br>inspiration</span></div><div><strong>03.</strong><span>Faire avancer<br>le savoir</span></div></div>
+      </div>
+      <div class="hero-art"><div class="sun"></div><div class="art-label">UN SAVOIR<br>QUI CIRCULE</div><div class="art-lines"></div><div class="art-caption">LE SAVOIR<br>EN MOUVEMENT<br><span>✳</span></div><div class="art-counter">01 — 05</div></div>
+      <div class="hero-index">BIBLIOTHÈQUE NUMÉRIQUE<br>ÉDITION 2026</div>
+    </section>
+    <section class="catalog" id="catalogue">
+      <div class="section-kicker"><span>01 / LE CATALOGUE</span><span>COLLECTION OUVERTE · 2026</span></div>
+      <div class="catalog-heading"><div><h2>Des idées qui<br><em>font leur chemin.</em></h2><p>Parcourez les recherches, trouvez votre prochaine piste.</p></div><span class="catalog-count"><span id="count">05</span> <small>MÉMOIRES</small></span></div>
+      <form class="search-form" id="search-form">
+        <label class="search-field"><span>⌕</span><input id="query" type="search" placeholder="Un titre, un auteur, un mot-clé…" aria-label="Chercher les mémoires"></label>
+        <select id="field" aria-label="Filtrer par filière"><option value="">Toutes les filières</option><option>Informatique</option><option>Gestion</option><option>Droit</option><option>Sciences économiques</option></select>
+        <select id="year" aria-label="Filtrer par année"><option value="">Toutes les années</option><option>2025</option><option>2024</option><option>2023</option></select>
+        <button class="button primary" type="submit">Rechercher <span>↗</span></button>
+      </form>
+      <div class="search-hint" id="search-hint">Recherchez par titre, auteur ou mot-clé, ou choisissez un filtre pour découvrir les mémoires.</div>
+      <div class="empty preview-empty" id="no-results"><span>✳</span><h3>Aucun mémoire ne correspond à votre recherche</h3><p>Vérifiez l’orthographe ou retirez un filtre pour élargir les résultats.</p><button class="button outline" id="reset" type="button">Réinitialiser la recherche</button></div>
+      <div class="result-meta" id="result-meta" hidden><span><span id="result-count">05</span> MÉMOIRES</span><span>DU PLUS RÉCENT AU PLUS ANCIEN ↓</span></div>
+      <div class="memo-grid" id="memo-grid">
+        <a class="memo-card preview-card" href="#fiche" data-field="Informatique" data-year="2025" data-search="système de gestion des bibliothèques universitaires aïcha mensah bibliothèque web gestion">
+          <div class="memo-card-top"><span>Informatique</span><span>2025</span></div><h3>Système de gestion des bibliothèques universitaires</h3><p>Conception d’une application web pour faciliter la gestion et la consultation des ressources universitaires.</p><div class="memo-card-bottom"><span>Aïcha Mensah</span><b>↗</b></div>
+        </a>
+        <a class="memo-card preview-card" href="#fiche" data-field="Informatique" data-year="2024" data-search="sécurité applications web modernes koffi adjovi sécurité données protection">
+          <div class="memo-card-top"><span>Informatique</span><span>2024</span></div><h3>Sécurité des applications web modernes</h3><p>Étude des bonnes pratiques de sécurisation des applications web et de la protection des données.</p><div class="memo-card-bottom"><span>Koffi Adjovi</span><b>↗</b></div>
+        </a>
+        <a class="memo-card preview-card" href="#fiche" data-field="Gestion" data-year="2025" data-search="entrepreneuriat numérique emploi jeunes mariam dossou entreprise diplômés">
+          <div class="memo-card-top"><span>Gestion</span><span>2025</span></div><h3>Entrepreneuriat numérique et emploi des jeunes</h3><p>Analyse du rôle des entreprises numériques dans l’insertion professionnelle des jeunes diplômés.</p><div class="memo-card-bottom"><span>Mariam Dossou</span><b>↗</b></div>
+        </a>
+        <a class="memo-card preview-card" href="#fiche" data-field="Droit" data-year="2023" data-search="protection données personnelles afrique ouest yao koudjo droit vie privée">
+          <div class="memo-card-top"><span>Droit</span><span>2023</span></div><h3>Protection des données personnelles en Afrique de l’Ouest</h3><p>Étude comparative des cadres juridiques de protection des données personnelles.</p><div class="memo-card-bottom"><span>Yao Koudjo</span><b>↗</b></div>
+        </a>
+        <a class="memo-card preview-card" href="#fiche" data-field="Sciences économiques" data-year="2024" data-search="finance inclusive développement local aminata soglo microfinance économie">
+          <div class="memo-card-top"><span>Sciences économiques</span><span>2024</span></div><h3>Finance inclusive et développement local</h3><p>Évaluation de l’impact de la microfinance sur le développement économique local.</p><div class="memo-card-bottom"><span>Aminata Soglo</span><b>↗</b></div>
+        </a>
+      </div>
+      <div class="empty" id="fiche" style="display:none"><h3>Fiche de démonstration</h3><p>Dans l’application complète, cette carte ouvre la fiche détaillée du mémoire et son lien de partage.</p><a href="#catalogue">← Retour au catalogue</a></div>
+    </section>
+    <section class="catalog" id="comment-ca-marche" style="padding-top:0"><div class="section-kicker"><span>02 / COMMENT ÇA MARCHE</span><span>UN PARCOURS SIMPLE</span></div><div class="memo-grid" style="margin-top:20px"><article class="memo-card"><div class="memo-card-top"><span>01 · EXPLORER</span></div><h3>Trouvez une nouvelle piste.</h3><p>Recherchez les travaux par titre, auteur, mot-clé, filière ou année.</p></article><article class="memo-card"><div class="memo-card-top"><span>02 · S’INSPIRER</span></div><h3>Consultez les fiches.</h3><p>Découvrez le résumé et les mots-clés des recherches de la communauté.</p></article><article class="memo-card"><div class="memo-card-top"><span>03 · CONTRIBUER</span></div><h3>Faites circuler le savoir.</h3><p>Les étudiants admissibles peuvent déposer leur mémoire après validation de leur compte.</p></article></div></section>
+  </main>
+  <footer><div class="footer-brand">MemoThèque</div><p>Les idées se transmettent, les recherches avancent.</p><small>© 2026 MemoThèque · Les auteurs conservent leurs droits.</small></footer>
+  <script>
+    const form=document.querySelector('#search-form'), query=document.querySelector('#query'), field=document.querySelector('#field'), year=document.querySelector('#year');
+    const cards=[...document.querySelectorAll('.preview-card')], hint=document.querySelector('#search-hint'), empty=document.querySelector('#no-results'), meta=document.querySelector('#result-meta');
+    function filter(){const q=query.value.trim().toLocaleLowerCase('fr'), f=field.value, y=year.value;let visible=0;cards.forEach(card=>{const match=(!q||card.dataset.search.toLocaleLowerCase('fr').includes(q))&&(!f||card.dataset.field===f)&&(!y||card.dataset.year===y);card.hidden=!match;if(match)visible++});document.querySelector('#count').textContent=String(visible).padStart(2,'0');document.querySelector('#result-count').textContent=visible;hint.hidden=Boolean(q||f||y);empty.style.display=visible===0&&(q||f||y)?'block':'none';meta.hidden=!(q||f||y)||visible===0}
+    form.addEventListener('submit',e=>{e.preventDefault();filter()});query.addEventListener('input',filter);field.addEventListener('change',filter);year.addEventListener('change',filter);document.querySelector('#reset').addEventListener('click',()=>{form.reset();filter()});
+    document.querySelectorAll('.preview-card').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();document.querySelector('#fiche').style.display='block';document.querySelector('#fiche').scrollIntoView({behavior:'smooth'})}));
+  </script>
+</body>
+</html>
